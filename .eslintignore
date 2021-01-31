@@ -1,0 +1,5 @@
+/__generated__
+/.next
+/coverage
+/node_modules
+*.d.ts

@@ -1,0 +1,12 @@
+# https://graphql-code-generator.com/docs/plugins/typescript
+schema: 'src/lib/graphql/server/**/*.graphqls'
+schemaEntrypoint: 'src/lib/graphql/server/resolvers/type-defs.graphqls'
+documents: 'src/**/*.graphql'
+plugins:
+  - typescript
+  - typescript-operations
+  - typescript-react-apollo
+cacheDir: __generated__
+config:
+  avoidOptionals: true
+  enumsAsTypes: true

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinksList renders correctly  when some items 1`] = `
+<div>
+  <div>
+    page-links:link-count
+     
+  </div>
+  <ul>
+    <li>
+      <a
+        href="http://site-0.com"
+        rel="noreferrer"
+        target="_blank"
+      >
+        link title #0
+      </a>
+    </li>
+    <li>
+      <a
+        href="http://site-1.com"
+        rel="noreferrer"
+        target="_blank"
+      >
+        link title #1
+      </a>
+    </li>
+    <li>
+      <a
+        href="http://site-2.com"
+        rel="noreferrer"
+        target="_blank"
+      >
+        link title #2
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LinksList renders correctly when no item 1`] = `
+<div>
+  <div>
+    page-links:link-count
+     
+  </div>
+</div>
+`;

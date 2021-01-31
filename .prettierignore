@@ -1,0 +1,8 @@
+/__generated__
+/.next
+/coverage
+node_modules
+*.d.ts
+.next
+yarn.lock
+public

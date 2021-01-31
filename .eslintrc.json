@@ -1,0 +1,109 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "import"],
+    "extends": [
+        "@devpulsion/eslint-config",
+        "@devpulsion/eslint-config/plugins/import",
+        "@devpulsion/eslint-config-react",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true
+            }
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "jest": true,
+        "node": true
+    },
+    "rules": {
+        // Useless ---------------------------------
+        // because not used by next/import
+        "import/dynamic-import-chunkname": 0,
+        // since next > 10
+        "react/react-in-jsx-scope": 0,
+        // because of Typescript
+        "react/prop-types": 0,
+
+        // React custom ---------------------------------
+        "react/display-name": 0,
+        "react/jsx-sort-props": [
+            1,
+            {
+                "callbacksLast": true,
+                "shorthandFirst": false,
+                "shorthandLast": true,
+                "ignoreCase": true,
+                "noSortAlphabetically": false,
+                "reservedFirst": false
+            }
+        ],
+        "import/exports-last": 0,
+        "import/extensions": [
+            1,
+            {
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+
+        // Typescript
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/explicit-member-accessibility": 0,
+        "@typescript-eslint/indent": 0,
+        "@typescript-eslint/member-delimiter-style": 0,
+        "@typescript-eslint/no-explicit-any": 1, // so we see where it need to be improved later
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-use-before-define": 1,
+        "@typescript-eslint/no-unused-vars": [
+            2,
+            {
+                "argsIgnorePattern": "^_" // let spread and explicitly say we won't use it
+            }
+        ],
+
+        // Dont know why it is sometimes fucked without any reason
+        "no-shadow": 1
+    },
+    "overrides": [
+        // Root files exported name
+        {
+            "files": ["./*.{ts,tsx,js}"],
+            "rules": {
+                "filenames/match-exported": 0,
+                "filenames/match-regex": 0
+            }
+        },
+        // Pages files exported name
+        {
+            "files": ["./src/pages/**/*.{ts,tsx}"],
+            "rules": {
+                "filenames/match-exported": 0,
+                "filenames/match-regex": 0
+            }
+        },
+        // Page tests files exported name
+        {
+            "files": ["./src/pages__test__/**/*.{ts,tsx}"],
+            "rules": {
+                "filenames/match-exported": 0,
+                "filenames/match-regex": 0
+            }
+        }
+    ]
+}
