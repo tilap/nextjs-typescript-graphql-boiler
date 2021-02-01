@@ -16,7 +16,7 @@
     "commit": "cz",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
-    "lint": "eslint src --ext ts --ext tsx --ext js",
+    "lint": "eslint src --ext ts --ext tsx --ext js --ext json",
     "generate-favicon": "real-favicon generate ./src/assets/favicon/faviconDescription.json faviconData.json public/favicon && rm faviconData.json"
   },
   "dependencies": {
@@ -68,6 +68,7 @@
     "eslint-config-prettier": "^7.1.0",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-unicorn": "^26.0.0",
     "graphql-let": "^0.16",
