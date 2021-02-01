@@ -6,6 +6,7 @@
         "@devpulsion/eslint-config/plugins/import",
         "@devpulsion/eslint-config-react",
         "plugin:@typescript-eslint/recommended",
+        "plugin:json/recommended",
         "prettier",
         "prettier/@typescript-eslint"
     ],
@@ -76,6 +77,9 @@
                 "argsIgnorePattern": "^_" // let spread and explicitly say we won't use it
             }
         ],
+
+        // Json
+        "json/*": ["error", "allowComments"],
 
         // Dont know why it is sometimes fucked without any reason
         "no-shadow": 1
