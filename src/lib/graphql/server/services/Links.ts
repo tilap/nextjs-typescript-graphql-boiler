@@ -17,6 +17,7 @@ const data: Link[] = [
 class Links extends Service {
   // eslint-disable-next-line require-await, class-methods-use-this
   async getMany(): Promise<Link[]> {
+    this.logger.info('Log from service', { action: 'getMany' });
     return Promise.resolve(data);
   }
 }
