@@ -3,10 +3,5 @@
         "title": "Links",
         "description": "Some links I love"
     },
-    "introduction": "Below a list of links",
-    "link-count": {
-        "0": "No link yet",
-        "1": "One link available",
-        "other": "{{count}} links !"
-    }
+    "introduction": "Below a list of links"
 }

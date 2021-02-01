@@ -3,10 +3,5 @@
         "title": "Liens",
         "description": "Des sites que j'adore"
     },
-    "introduction": "Une liste de liens",
-    "link-count": {
-        "0": "Aucun lien pour le moment",
-        "1": "Un lien disponible",
-        "other": "{{count}} liens disponibles"
-    }
+    "introduction": "Une liste de liens"
 }
