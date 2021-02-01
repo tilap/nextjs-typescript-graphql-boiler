@@ -1,0 +1,7 @@
+{
+    "link-count": {
+        "0": "No link yet",
+        "1": "One link available",
+        "other": "{{count}} links !"
+    }
+}
