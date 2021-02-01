@@ -1,5 +1,5 @@
 import Locale from 'lib/graphql/types/Locale';
-import { graphql as logger } from 'loggers';
+import { graphql as graphqlLogger, services as servicesLogger } from 'loggers';
 import Links from './server/services/Links';
 import { ApolloContext } from './universalApolloClient';
 
@@ -18,9 +18,9 @@ const createApolloAppContext = ({ locale }: CreateApolloAppContextProps): Promis
     return {
       app: { locale },
       services: {
-        links: new Links({ locale }),
+        links: new Links({ locale, logger: servicesLogger.child('links') }),
       },
-      logger,
+      logger: graphqlLogger,
     };
   });
 };
