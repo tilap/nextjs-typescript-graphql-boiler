@@ -1,10 +1,11 @@
-import { GetStaticProps } from 'next';
+import { NextPage, GetStaticProps } from 'next';
+
 import useTranslation from 'next-translate/useTranslation';
 import { getPageLogger } from 'loggers';
 
 const logger = getPageLogger('home');
 
-const IndexPage: React.FC = () => {
+const IndexPage: NextPage = () => {
   logger.warn('a log while rendering');
   const { t } = useTranslation('common');
   return <div>{t('hello')}</div>;

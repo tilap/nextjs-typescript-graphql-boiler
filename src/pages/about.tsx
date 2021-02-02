@@ -1,6 +1,7 @@
+import { NextPage } from 'next';
 import Link from 'next/link';
 
-const AboutPage: React.FC = () => {
+const AboutPage: NextPage = () => {
   return (
     <div>
       <p>This is a bare page without any custom stuf. No i18n, no metas, bare layout.</p>
