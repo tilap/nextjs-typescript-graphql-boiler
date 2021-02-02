@@ -2,5 +2,6 @@
     "metas": {
         "title": "Home",
         "description": "Hello world"
-    }
+    },
+    "hello": "Hello!"
 }

@@ -6,7 +6,7 @@ const logger = getPageLogger('home');
 
 const IndexPage: React.FC = () => {
   logger.warn('a log while rendering');
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('page-home');
   return <div>{t('hello')}</div>;
 };
 
