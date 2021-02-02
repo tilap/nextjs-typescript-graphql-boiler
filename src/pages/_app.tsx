@@ -1,10 +1,14 @@
 import { NormalizedCacheObject, ApolloProvider } from '@apollo/client';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import { useEffect } from 'react';
 import LayoutBare from 'components/LayoutBare';
 import LayoutDefault from 'components/LayoutDefault';
 import { SiteProvider } from 'config/site/SiteContext';
+import theme from 'config/theme';
 import Metas from 'containers/Metas';
 import { useApollo } from 'lib/graphql/universalApolloClient';
 
@@ -40,11 +44,22 @@ const App: React.FC<AppProps> = ({ pageProps, ...rest }) => {
   const apolloClient = useApollo(initialApolloState);
   const LayoutComponent = getLayoutComponentFromLayoutType(layout);
 
+  useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles!.parentElement!.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
     <SiteProvider>
       <ApolloProvider client={apolloClient}>
         <Metas pageId={pageId} />
-        <LayoutComponent pageProps={pagePropsRest} {...rest} />
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <LayoutComponent pageProps={pagePropsRest} {...rest} />
+        </ThemeProvider>
       </ApolloProvider>
     </SiteProvider>
   );
