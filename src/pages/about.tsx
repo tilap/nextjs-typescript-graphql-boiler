@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
+import Link from 'containers/Link';
 
 const AboutPage: NextPage = () => {
   return (
