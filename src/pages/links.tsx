@@ -1,10 +1,10 @@
-import { GetStaticProps } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
 import LinksList, { LinksListDocument } from 'containers/LinksList';
 import createApolloAppContext from 'lib/graphql/createApolloAppContext';
 import { initializeApollo } from 'lib/graphql/universalApolloClient';
 
-const LinksPage: React.FC = () => {
+const LinksPage: NextPage = () => {
   const { t } = useTranslation('page-links');
   return (
     <div>
