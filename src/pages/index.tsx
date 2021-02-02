@@ -7,7 +7,7 @@ const logger = getPageLogger('home');
 
 const IndexPage: NextPage = () => {
   logger.warn('a log while rendering');
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('page-home');
   return <div>{t('hello')}</div>;
 };
 

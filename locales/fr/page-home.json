@@ -1,4 +1,7 @@
 {
-    "title": "Accueil",
-    "description": "Bonjour monde"
+    "metas": {
+        "title": "Accueil",
+        "description": "Bonjour monde"
+    },
+    "hello": "Bonjour!"
 }
