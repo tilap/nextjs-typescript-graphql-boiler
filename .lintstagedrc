@@ -1,4 +1,7 @@
 {
+    "*.md": [
+        " yarn lint-markdown *.md --fix"
+    ],
     "*.@(ts|tsx)": [
         "yarn lint",
         "yarn format"
